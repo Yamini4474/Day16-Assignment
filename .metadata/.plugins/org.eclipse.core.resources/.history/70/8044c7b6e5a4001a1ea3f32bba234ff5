@@ -1,0 +1,32 @@
+package addressBook;
+import javax.swing.*;
+import java.util.*;
+class addressBook {
+	ArrayList<person> persons;
+	
+	//constructor//
+	public addressBook() {
+		persons = new ArrayList<person>();
+	}
+	//add person record to arraylist//
+	public static class JoptionPane {
+	public void addPerson() {
+		private static String showInputDialog(String string) {
+	
+		String firstName = JoptionPane.showInputDialog("Enter firstName");
+		String lastName = JoptionPane.showInputDialog("Enter lastName");
+		String address = JoptionPane.showInputDialog("Enter address");
+		String city = JoptionPane.showInputDialog("Enter city");
+		String state = JoptionPane.showInputDialog("Enter state");
+		String zipCode = JoptionPane.showInputDialog("Enter zipCode");
+		String phoneNum = JoptionPane.showInputDialog("Enter state");
+		}
+		return null;	
+	}
+	//construct new person object
+	Person p = new Person(String firstName, String lastName, String address, String city, String state, int zipCode, int phoneNum);
+	//add person obj to arrayList
+	persons.add(p);
+	
+	
+}

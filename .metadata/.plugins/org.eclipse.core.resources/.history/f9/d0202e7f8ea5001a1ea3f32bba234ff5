@@ -1,0 +1,173 @@
+import java.util.Scanner;
+
+class Book{
+	Scanner s = new Scanner(System.in);
+	//nested class for each entry
+	class Entry{
+		private String firstName;
+		private String lastName;
+		private String address;
+		private String city;
+		private String state;
+		int phoneNumber;
+		int zipCode;
+		
+		Entry(String firstName,String lastName,String address, String city, String state, int phoneNumber,int zipCode) {
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.address = address;
+			this.city = city;
+			this.state = state;
+			this.phoneNumber = phoneNumber;
+			this.zipCode = zipCode;
+		}
+		Entry() {
+			firstName = "";
+			lastName = "";
+			address = "";
+			city = "";
+			state = "";
+			phoneNumber = 
+			zipCode =  ;
+		}
+		public void readEntry() {
+			System.out.println("First Name: "+firstName);
+			System.out.println("Last Name: "+lastName);		
+			System.out.println("Address: "+address);
+			System.out.println("City: "+city);
+			System.out.println("state: "+state);
+			System.out.println("Phone Number: "+phoneNumber);
+			System.out.println("ZipCode: "+zipCode);
+		}
+	}
+	//keep tracks of entry in book
+	private int entries = 0;
+	Entry[] contents;
+	public void intEntries(int e) {
+		contents = new Entry[e];
+		for (int i =0;i<contents.length;i++) {
+			contents[i] = new Entry();
+		}
+	}
+	public int getEntries() {
+		return contents.length;
+	}
+	//add entry in book
+	public void add(String firstName, String lastName, String address, String city, String state, int phoneNumber, int zipCode) {
+		if (entries<contents.length) {
+			contents[entries] = new Entry(firstName,lastName,address,city,state,phoneNumber,zipCode);
+			entries++;
+		}
+		else 
+			System.out.println("Book is full");
+	}
+	//remove entry in book
+	
+	public void remove(int entry){
+		if (entries>0) {
+			contents[entry] = new Entry();
+			for (int i = 0; int<entries-entry; i++) {
+				if(entry+1==entries) contents[entry] = new Entry();
+				else {
+					Entry temp = contents[entry+1];
+					contents[entry+1] = contents[entry+1];//removes entry and moves
+					contents[entry+i+1] = temp;
+				}
+			}
+			entries--;
+		}
+		else System.out.println("book is empty");
+	}
+	//changes values of an entry
+	 public void edit(String firstName, String lastName, String address, String city, String state, int phoneNumber, int zipCode, int selection){
+	        contents[selection].firstName = firstName;
+	        contents[selection].lastName = lastName;
+	        contents[selection].address = address;
+	        contents[selection].city = city;
+	        contents[selection].state = state;
+	        contents[selection].phoneNumber = phoneNumber;
+	        contents[selection].zipCode = zipCode;
+	 }
+
+	//Sorts the book based on a part of the entry
+	    //int n is used to tell which part of the entries to base the sort on
+	    public void sort(int n){
+	        for(int i = 0;i<contents.length;i++){
+	            for (int j = 0; j<contents.length; j++) {
+	            	switch(n) {
+	            	case 1:
+	            		if (contents[i].firstName.compareTo(contents[j].firstName)<0){
+	            			Entry temp = contents[i];
+	            			contents[i] = contents[j];
+	            			contents[j] = temp;
+	            		}
+	            		break;
+	            	case 2:
+	            		if (contents[i].lastName.compareTo(contents[j].lastName)<0){
+                            Entry temp = contents[i];
+                            contents[i] = contents[j];
+                            contents[j] = temp;
+	            		}
+	            		break;
+	            	case 3:
+	            		if (contents[i].address.compareTo(contents[j].address)<0) {
+	            			Entry temp = contents[i];
+	            			contents[i] = contents[j];
+	            			contents[j] = temp;
+	            		}
+	            		break;
+	            	case 4:
+	            		if (contents[i].city.compareTo(contents[j].city)<0) {
+	            			Entry temp = contents[i];
+	            			contents[i] = contents[j];
+	            			contents[j] = temp;
+	            		}
+	            		break;
+	            	case 5:
+	            		if (contents[i].state.compareTo(contents[j].state)<0) {
+	            			Entry temp = contents[i];
+	            			contents[i] = contents[j];
+	            			contents[j] = temp;
+	            		}
+	            		break;
+	            	default:
+	            		System.out.println("Enter: invalid field");
+	            		break;
+	            	}
+	            }
+	        }
+	    }
+	    public void addFromCopy(Entry e){
+	        if (entries<contents.length){
+	            contents[entries] = e;
+	            entries++;
+	            }
+	            else System.out.println("Error: book is full");
+	    }
+	}
+
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+        		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            	
+	   
+	               
